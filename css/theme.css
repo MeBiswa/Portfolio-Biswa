@@ -1,0 +1,40 @@
+/* Theme CSS Custom Properties - Dark and Light palettes */
+
+:root {
+  /* Dark Palette (default) */
+  --primary-bg: #020C1B;
+  --secondary-bg: #0A192F;
+  --accent: #00BFFF;
+  --highlight: #64FFDA;
+  --text: #CCD6F6;
+  --text-secondary: #8892B0;
+  --card-bg: rgba(10, 25, 47, 0.7);
+  --card-border: rgba(0, 191, 255, 0.1);
+
+  /* Fonts */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --card-padding: 24px;
+  --gap: 16px;
+
+  /* Border Radius */
+  --radius-card: 12px;
+  --radius-badge: 8px;
+  --radius-button: 8px;
+}
+
+/* Light Palette Override */
+[data-theme="light"] {
+  --primary-bg: #F8F9FA;
+  --secondary-bg: #FFFFFF;
+  --accent: #0077B6;
+  --highlight: #00897B;
+  --text: #1A1A2E;
+  --text-secondary: #4A4A6A;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(0, 119, 182, 0.15);
+}
