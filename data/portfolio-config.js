@@ -200,7 +200,6 @@ export const PortfolioConfig = {
   contact: {
     location: "Pune, India",
     email: "acharyabiswaprakash06@gmail.com",
-    phone: "+91-8984291205",
     linkedin: "https://www.linkedin.com/in/biswaprakash-acharya-5b8a5b183"
   }
 };
