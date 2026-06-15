@@ -142,8 +142,8 @@ export const PortfolioConfig = {
     {
       institution: "L.R DAV Public School, Cuttack",
       degree: "Secondary & Senior Secondary Education (CBSE)",
-      period: "2016–2020",
-      score: "10th: 93.8% | 12th: 87.8%"
+      period: "2007–2020",
+      score: "10th: 93.8%(2018) | 12th: 87.8%(2020)"
     }
   ],
 
