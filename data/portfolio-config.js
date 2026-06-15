@@ -58,36 +58,36 @@ export const PortfolioConfig = {
     {
       category: "PLM & Tools",
       skills: [
-        { name: "Windchill" },
-        { name: "Lifecycle Management" },
-        { name: "ACL Configuration" },
-        { name: "QML" }
+        { name: "Windchill", proficiency: 90 },
+        { name: "Lifecycle Management", proficiency: 85 },
+        { name: "ACL Configuration", proficiency: 85 },
+        { name: "QML", proficiency: 75 }
       ]
     },
     {
       category: "Programming",
       skills: [
-        { name: "Java" },
-        { name: "SQL" },
-        { name: "XML" },
-        { name: "PowerShell" }
+        { name: "Java", proficiency: 85 },
+        { name: "SQL", proficiency: 80 },
+        { name: "XML", proficiency: 80 },
+        { name: "PowerShell", proficiency: 70 }
       ]
     },
     {
       category: "Concepts",
       skills: [
-        { name: "PLM Customization" },
-        { name: "Data Analysis" },
-        { name: "Debugging" }
+        { name: "PLM Customization", proficiency: 90 },
+        { name: "Data Analysis", proficiency: 75 },
+        { name: "Debugging", proficiency: 85 }
       ]
     },
     {
       category: "Other",
       skills: [
-        { name: "Azure AI" },
-        { name: "MATLAB & Simulink" },
-        { name: "VLSI" },
-        { name: "Embedded Systems" }
+        { name: "Azure AI", proficiency: 65 },
+        { name: "MATLAB & Simulink", proficiency: 60 },
+        { name: "VLSI", proficiency: 55 },
+        { name: "Embedded Systems", proficiency: 60 }
       ]
     }
   ],
@@ -143,7 +143,7 @@ export const PortfolioConfig = {
       institution: "L.R DAV Public School, Cuttack",
       degree: "Secondary & Senior Secondary Education (CBSE)",
       period: "2007–2020",
-      score: "10th: 93.8%(2018) | 12th: 87.8%(2020)"
+      score: "10th: 93.8% (2018) | 12th: 87.8% (2020)"
     }
   ],
 
