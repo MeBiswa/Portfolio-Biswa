@@ -58,36 +58,36 @@ export const PortfolioConfig = {
     {
       category: "PLM & Tools",
       skills: [
-        { name: "Windchill", proficiency: 90 },
-        { name: "Lifecycle Management", proficiency: 85 },
-        { name: "ACL Configuration", proficiency: 85 },
-        { name: "QML", proficiency: 75 }
+        { name: "Windchill" },
+        { name: "Lifecycle Management" },
+        { name: "ACL Configuration" },
+        { name: "QML" }
       ]
     },
     {
       category: "Programming",
       skills: [
-        { name: "Java", proficiency: 85 },
-        { name: "SQL", proficiency: 80 },
-        { name: "XML", proficiency: 80 },
-        { name: "PowerShell", proficiency: 70 }
+        { name: "Java" },
+        { name: "SQL" },
+        { name: "XML" },
+        { name: "PowerShell" }
       ]
     },
     {
       category: "Concepts",
       skills: [
-        { name: "PLM Customization", proficiency: 90 },
-        { name: "Data Analysis", proficiency: 75 },
-        { name: "Debugging", proficiency: 85 }
+        { name: "PLM Customization" },
+        { name: "Data Analysis" },
+        { name: "Debugging" }
       ]
     },
     {
       category: "Other",
       skills: [
-        { name: "Azure AI", proficiency: 65 },
-        { name: "MATLAB & Simulink", proficiency: 60 },
-        { name: "VLSI", proficiency: 55 },
-        { name: "Embedded Systems", proficiency: 60 }
+        { name: "Azure AI" },
+        { name: "MATLAB & Simulink" },
+        { name: "VLSI" },
+        { name: "Embedded Systems" }
       ]
     }
   ],
