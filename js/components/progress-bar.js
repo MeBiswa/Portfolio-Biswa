@@ -28,7 +28,7 @@ export function createProgressBar(props) {
   // Label row (skill name + percentage)
   const labelEl = document.createElement('span');
   labelEl.className = 'progress-bar__label';
-  labelEl.innerHTML = `<span>${label}</span><span>${clampedPercentage}%</span>`;
+  labelEl.innerHTML = `<span>${label}</span>`;
 
   // Track — premium rounded style
   const track = document.createElement('div');
