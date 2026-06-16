@@ -96,9 +96,17 @@ export const PortfolioConfig = {
     {
       name: "ACL Automation System",
       description: "End-to-end automation system that detects, analyzes, and reports ACL changes across Windchill environments with zero manual intervention.",
-      techStack: ["Node.js", "File System", "CSV Processing", "PowerShell", "Outlook Integration", "Task Scheduler"],
+      techStack: ["Node.js", "Automation", "CSV Processing", "PowerShell", "Email Integration", "Task Scheduler"],
       icon: "lock",
       badge: "Zero-Touch Automation",
+      liveUrl: "https://comparatoracl.netlify.app",
+      githubUrl: "https://github.com/biswaprakash-acharya",
+      solves: "Eliminates manual ACL audits and ensures consistent monitoring of access changes across systems.",
+      metrics: [
+        "✔ Handles ~1M+ rows efficiently",
+        "✔ Fully automated (zero manual steps)",
+        "✔ End-to-end report delivery"
+      ],
       highlights: [
         "✔ Backend automation pipeline (Node.js)",
         "✔ UI-based reporting and visualization",
