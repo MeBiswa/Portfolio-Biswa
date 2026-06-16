@@ -21,7 +21,8 @@ function getIconEmoji(icon) {
     code: '💻',
     database: '🗄️',
     gear: '⚙️',
-    tools: '🛠️'
+    tools: '🛠️',
+    network: '🏢'
   };
   return iconMap[icon] || '🔧';
 }
@@ -90,6 +91,36 @@ function createToolCardContent(tool) {
     stackLine.style.cssText = 'font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: 8px; letter-spacing: 0.5px;';
     stackLine.textContent = 'STACK: ' + tool.techStack.join(' | ');
     content.appendChild(stackLine);
+  }
+
+  // Features list (if available)
+  if (tool.features && tool.features.length > 0) {
+    const featuresHeading = document.createElement('div');
+    featuresHeading.style.cssText = 'font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); margin-top: 12px; letter-spacing: 1px; text-transform: uppercase;';
+    featuresHeading.textContent = 'FEATURES:';
+    content.appendChild(featuresHeading);
+
+    const featuresList = document.createElement('ul');
+    featuresList.style.cssText = 'list-style: none; padding: 0; margin: 6px 0 0 0;';
+    tool.features.forEach(feature => {
+      const li = document.createElement('li');
+      li.style.cssText = 'font-size: 0.8rem; color: var(--text-secondary); padding: 2px 0; padding-left: 14px; position: relative;';
+      li.textContent = feature;
+      const bullet = document.createElement('span');
+      bullet.style.cssText = 'position: absolute; left: 0; color: var(--highlight);';
+      bullet.textContent = '•';
+      li.prepend(bullet);
+      featuresList.appendChild(li);
+    });
+    content.appendChild(featuresList);
+  }
+
+  // AI highlight (if available)
+  if (tool.aiHighlight) {
+    const aiBlock = document.createElement('div');
+    aiBlock.style.cssText = 'margin-top: 10px; padding: 8px 12px; background: rgba(100, 255, 218, 0.06); border-left: 2px solid var(--highlight); border-radius: 4px; font-size: 0.75rem; color: var(--highlight); font-family: var(--font-mono); line-height: 1.5;';
+    aiBlock.textContent = tool.aiHighlight;
+    content.appendChild(aiBlock);
   }
 
   // Tech stack tags
