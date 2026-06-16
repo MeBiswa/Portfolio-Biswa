@@ -9,7 +9,7 @@ export const PortfolioConfig = {
     title: "Windchill PLM Engineer | Java | Enterprise Systems",
     location: "Pune, India",
     email: "acharyabiswaprakash06@gmail.com",
-    //phone: "+91-8984291205",
+    phone: "+91-8984291205",
     linkedin: "https://www.linkedin.com/in/biswaprakash-acharya-5b8a5b183",
     resumeUrl: "assets/BISWA_RESUME_2026.pdf"
   },
@@ -29,7 +29,7 @@ export const PortfolioConfig = {
     stats: [
       { label: "Tools Built", value: "2" },
       { label: "Technologies", value: "10+" },
-      { label: "Domain", value: "PLM & Enterprise" }
+      { label: "Domain", value: "PLM" }
     ]
   },
 
@@ -119,18 +119,27 @@ export const PortfolioConfig = {
     },
     {
       name: "BIZILOGS – Business Intelligence Platform",
-      description: "A modern business intelligence platform to manage companies, contacts, organizational hierarchy, and business requirements with real-time collaboration and AI-assisted insights.",
-      techStack: ["Node.js", "MongoDB", "REST API", "Dashboard UI", "AI Assistant"],
+      description: "A full-stack business intelligence platform that manages companies, contacts, organizational hierarchy, and business requirements with real-time collaboration, role-based access, and AI-powered insights.",
+      techStack: ["Node.js", "Express", "MongoDB", "REST API", "Netlify", "Render", "AI Assistant"],
       icon: "network",
-      features: [
-        "Company & Contact Management",
-        "Organizational Chart Visualization",
-        "Requirement & Deal Tracking",
-        "Role-Based Permissions (Admin/User)",
-        "AI Assistant (BISWA for smart queries)",
-        "Persistent Data Storage using MongoDB"
+      badge: "Real-Time Collaboration System",
+      highlights: [
+        "✔ Company & Contact Management",
+        "✔ Organizational Hierarchy Visualization",
+        "✔ Role-Based Access (Admin/User)",
+        "✔ AI Assistant (BISWA for smart queries)",
+        "✔ Persistent Cloud Storage (MongoDB)"
       ],
-      aiHighlight: "Includes BISWA AI assistant for smart insights like: 'Show contacts for braking systems' or 'List open requirements for ZF'"
+      workflow: "Login → Manage Companies → Build Org Chart → Track Requirements → Query via BISWA AI → Data Persists in MongoDB",
+      features: [
+        "Real-time data persistence using MongoDB Atlas",
+        "Dynamic org chart rendering with hierarchy rebuild",
+        "AI-assisted filtering and search (BISWA)",
+        "Multi-entity management (companies, contacts, requirements)",
+        "API-based architecture for scalability",
+        "Responsive and modern UI"
+      ],
+      aiHighlight: "Business Intelligence Flow: Users create structured company data → contacts form hierarchical relationships → requirements connect business needs → BISWA enables intelligent querying → data persists across sessions using MongoDB → enabling real-world business decision support."
     }
   ],
 
