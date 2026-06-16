@@ -93,6 +93,26 @@ function createToolCardContent(tool) {
   descEl.textContent = tool.description;
   content.appendChild(descEl);
 
+  // "What this solves" section
+  if (tool.solves) {
+    const solvesEl = document.createElement('div');
+    solvesEl.style.cssText = 'margin-top: 8px; padding: 6px 10px; background: rgba(100, 255, 218, 0.04); border-left: 2px solid var(--highlight); border-radius: 4px; font-size: 0.78rem; color: var(--text-secondary); font-style: italic; line-height: 1.5;';
+    solvesEl.textContent = tool.solves;
+    content.appendChild(solvesEl);
+  }
+
+  // Impact metrics
+  if (tool.metrics && tool.metrics.length > 0) {
+    const metricsDiv = document.createElement('div');
+    metricsDiv.style.cssText = 'margin-top: 10px; font-size: 0.8rem; color: var(--highlight); line-height: 1.8; font-family: var(--font-mono);';
+    tool.metrics.forEach(m => {
+      const line = document.createElement('div');
+      line.textContent = m;
+      metricsDiv.appendChild(line);
+    });
+    content.appendChild(metricsDiv);
+  }
+
   // Highlights (if available)
   if (tool.highlights && tool.highlights.length > 0) {
     const highlightsDiv = document.createElement('div');
@@ -187,6 +207,38 @@ function createToolCardContent(tool) {
 
   // Fake UI preview blocks
   content.appendChild(createUIPreview());
+
+  // Action buttons (Live Demo + GitHub)
+  if (tool.liveUrl || tool.githubUrl) {
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = 'display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;';
+
+    if (tool.liveUrl) {
+      const liveBtn = document.createElement('a');
+      liveBtn.href = tool.liveUrl;
+      liveBtn.target = '_blank';
+      liveBtn.rel = 'noopener noreferrer';
+      liveBtn.textContent = '🚀 Live Demo';
+      liveBtn.style.cssText = 'padding: 8px 16px; font-size: 0.8rem; font-family: var(--font-mono); background: rgba(0, 191, 255, 0.15); color: var(--accent); border: 1px solid var(--accent); border-radius: 6px; text-decoration: none; transition: background 0.3s ease, box-shadow 0.3s ease;';
+      liveBtn.addEventListener('mouseenter', () => { liveBtn.style.background = 'rgba(0, 191, 255, 0.3)'; liveBtn.style.boxShadow = '0 0 12px rgba(0, 191, 255, 0.4)'; });
+      liveBtn.addEventListener('mouseleave', () => { liveBtn.style.background = 'rgba(0, 191, 255, 0.15)'; liveBtn.style.boxShadow = 'none'; });
+      btnContainer.appendChild(liveBtn);
+    }
+
+    if (tool.githubUrl) {
+      const ghBtn = document.createElement('a');
+      ghBtn.href = tool.githubUrl;
+      ghBtn.target = '_blank';
+      ghBtn.rel = 'noopener noreferrer';
+      ghBtn.textContent = '💻 View Code';
+      ghBtn.style.cssText = 'padding: 8px 16px; font-size: 0.8rem; font-family: var(--font-mono); background: transparent; color: var(--text-secondary); border: 1px solid var(--card-border); border-radius: 6px; text-decoration: none; transition: border-color 0.3s ease, color 0.3s ease;';
+      ghBtn.addEventListener('mouseenter', () => { ghBtn.style.borderColor = 'var(--accent)'; ghBtn.style.color = 'var(--accent)'; });
+      ghBtn.addEventListener('mouseleave', () => { ghBtn.style.borderColor = 'var(--card-border)'; ghBtn.style.color = 'var(--text-secondary)'; });
+      btnContainer.appendChild(ghBtn);
+    }
+
+    content.appendChild(btnContainer);
+  }
 
   return content;
 }
