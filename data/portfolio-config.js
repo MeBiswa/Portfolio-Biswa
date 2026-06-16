@@ -47,9 +47,9 @@ export const PortfolioConfig = {
         "Full-stack development inside Windchill"
       ],
       achievements: [
-        "Built ACL Comparison Tool (frontend + backend)",
-        "Built Logging & Monitoring Tool",
-        "Designed enterprise PLM solutions"
+        "Built ACL Automation System (frontend + backend) for automated access analysis across PLM systems",
+        "Developed BIZILOGS – a full-stack business intelligence platform for managing companies, contacts, org hierarchy, and business requirements with AI-assisted insights (BISWA) and MongoDB storage",
+        "Designed and delivered enterprise PLM solutions including workflow configuration, ACL optimization, and system-level customizations"
       ]
     }
   ],
