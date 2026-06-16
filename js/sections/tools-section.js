@@ -79,11 +79,39 @@ function createToolCardContent(tool) {
   nameEl.textContent = tool.name;
   content.appendChild(nameEl);
 
+  // Badge (if available)
+  if (tool.badge) {
+    const badgeEl = document.createElement('span');
+    badgeEl.style.cssText = 'display: inline-block; margin-top: 4px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: rgba(100, 255, 218, 0.1); color: var(--highlight); border: 1px solid rgba(100, 255, 218, 0.3);';
+    badgeEl.textContent = tool.badge;
+    content.appendChild(badgeEl);
+  }
+
   // Description
   const descEl = document.createElement('p');
   descEl.className = 'tool-card__description';
   descEl.textContent = tool.description;
   content.appendChild(descEl);
+
+  // Highlights (if available)
+  if (tool.highlights && tool.highlights.length > 0) {
+    const highlightsDiv = document.createElement('div');
+    highlightsDiv.style.cssText = 'margin-top: 8px; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.8;';
+    tool.highlights.forEach(h => {
+      const line = document.createElement('div');
+      line.textContent = h;
+      highlightsDiv.appendChild(line);
+    });
+    content.appendChild(highlightsDiv);
+  }
+
+  // Workflow (if available)
+  if (tool.workflow) {
+    const workflowEl = document.createElement('div');
+    workflowEl.style.cssText = 'margin-top: 10px; padding: 6px 12px; background: rgba(0, 191, 255, 0.06); border-radius: 6px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.5px; text-align: center;';
+    workflowEl.textContent = tool.workflow;
+    content.appendChild(workflowEl);
+  }
 
   // Stack line
   if (tool.techStack && tool.techStack.length > 0) {
