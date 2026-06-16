@@ -9,7 +9,7 @@ export const PortfolioConfig = {
     title: "Windchill PLM Engineer | Java | Enterprise Systems",
     location: "Pune, India",
     email: "acharyabiswaprakash06@gmail.com",
-    phone: "+91-8984291205",
+    //phone: "+91-8984291205",
     linkedin: "https://www.linkedin.com/in/biswaprakash-acharya-5b8a5b183",
     resumeUrl: "assets/BISWA_RESUME_2026.pdf"
   },
@@ -94,10 +94,28 @@ export const PortfolioConfig = {
 
   toolsBuilt: [
     {
-      name: "ACL Comparison Tool",
-      description: "Compares user roles, domains, and access permissions across Windchill environments.",
-      techStack: ["Java", "Windchill API", "SQL", "HTML/CSS"],
-      icon: "lock"
+      name: "ACL Automation System",
+      description: "End-to-end automation system that detects, analyzes, and reports ACL changes across Windchill environments with zero manual intervention.",
+      techStack: ["Node.js", "File System", "CSV Processing", "PowerShell", "Outlook Integration", "Task Scheduler"],
+      icon: "lock",
+      badge: "Zero-Touch Automation",
+      highlights: [
+        "✔ Backend automation pipeline (Node.js)",
+        "✔ UI-based reporting and visualization",
+        "✔ Zero-touch execution (Scheduler + Email)"
+      ],
+      workflow: "Export → Detect → Compare → Report → Email",
+      features: [
+        "Auto-detection of latest CSV exports",
+        "Composite key-based comparison logic",
+        "Large-scale data handling (~1M rows)",
+        "Automated report generation (CSV + ZIP)",
+        "Email delivery via Outlook integration",
+        "Scheduled execution (Task Scheduler)",
+        "UI-based project visualization",
+        "Clean reporting structure display"
+      ],
+      aiHighlight: "Fully automated pipeline: Windchill exports ACL data → System detects new files → Compares using composite keys → Generates categorized reports (Added/Removed/Changed) → ZIPs and emails to stakeholders — all with zero manual effort."
     },
     {
       name: "BIZILOGS – Business Intelligence Platform",
