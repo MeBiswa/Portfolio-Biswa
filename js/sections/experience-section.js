@@ -125,7 +125,7 @@ export function renderExperienceSection(experienceData) {
     if (item.achievements && item.achievements.length > 0) {
       const achieveHeading = document.createElement('h5');
       achieveHeading.className = 'timeline__achievements-heading';
-      achieveHeading.textContent = 'Key Achievements';
+      achieveHeading.textContent = 'Key Achievements & Products Built';
       cardContent.appendChild(achieveHeading);
 
       const achieveList = document.createElement('ul');
