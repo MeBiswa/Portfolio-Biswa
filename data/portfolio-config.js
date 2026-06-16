@@ -100,10 +100,19 @@ export const PortfolioConfig = {
       icon: "lock"
     },
     {
-      name: "Business Logging & Monitoring Tool",
-      description: "Tracks system behavior, errors, and execution flows for enterprise PLM operations.",
-      techStack: ["Java", "Log4j", "SQL", "Dashboard UI"],
-      icon: "chart"
+      name: "BIZILOGS – Business Intelligence Platform",
+      description: "A modern business intelligence platform to manage companies, contacts, organizational hierarchy, and business requirements with real-time collaboration and AI-assisted insights.",
+      techStack: ["Node.js", "MongoDB", "REST API", "Dashboard UI", "AI Assistant"],
+      icon: "network",
+      features: [
+        "Company & Contact Management",
+        "Organizational Chart Visualization",
+        "Requirement & Deal Tracking",
+        "Role-Based Permissions (Admin/User)",
+        "AI Assistant (BISWA for smart queries)",
+        "Persistent Data Storage using MongoDB"
+      ],
+      aiHighlight: "Includes BISWA AI assistant for smart insights like: 'Show contacts for braking systems' or 'List open requirements for ZF'"
     }
   ],
 
