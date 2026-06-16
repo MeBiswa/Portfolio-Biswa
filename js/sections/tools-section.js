@@ -93,34 +93,53 @@ function createToolCardContent(tool) {
     content.appendChild(stackLine);
   }
 
-  // Features list (if available)
-  if (tool.features && tool.features.length > 0) {
-    const featuresHeading = document.createElement('div');
-    featuresHeading.style.cssText = 'font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); margin-top: 12px; letter-spacing: 1px; text-transform: uppercase;';
-    featuresHeading.textContent = 'FEATURES:';
-    content.appendChild(featuresHeading);
+  // Features list (if available) — hidden behind Read More
+  if ((tool.features && tool.features.length > 0) || tool.aiHighlight) {
+    const expandContent = document.createElement('div');
+    expandContent.className = 'tool-card__expand-content';
+    expandContent.style.cssText = 'display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--card-border);';
 
-    const featuresList = document.createElement('ul');
-    featuresList.style.cssText = 'list-style: none; padding: 0; margin: 6px 0 0 0;';
-    tool.features.forEach(feature => {
-      const li = document.createElement('li');
-      li.style.cssText = 'font-size: 0.8rem; color: var(--text-secondary); padding: 2px 0; padding-left: 14px; position: relative;';
-      li.textContent = feature;
-      const bullet = document.createElement('span');
-      bullet.style.cssText = 'position: absolute; left: 0; color: var(--highlight);';
-      bullet.textContent = '•';
-      li.prepend(bullet);
-      featuresList.appendChild(li);
+    if (tool.features && tool.features.length > 0) {
+      const featuresHeading = document.createElement('div');
+      featuresHeading.style.cssText = 'font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;';
+      featuresHeading.textContent = 'FEATURES:';
+      expandContent.appendChild(featuresHeading);
+
+      const featuresList = document.createElement('ul');
+      featuresList.style.cssText = 'list-style: none; padding: 0; margin: 0;';
+      tool.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.style.cssText = 'font-size: 0.8rem; color: var(--text-secondary); padding: 2px 0; padding-left: 14px; position: relative;';
+        li.textContent = feature;
+        const bullet = document.createElement('span');
+        bullet.style.cssText = 'position: absolute; left: 0; color: var(--highlight);';
+        bullet.textContent = '•';
+        li.prepend(bullet);
+        featuresList.appendChild(li);
+      });
+      expandContent.appendChild(featuresList);
+    }
+
+    if (tool.aiHighlight) {
+      const aiBlock = document.createElement('div');
+      aiBlock.style.cssText = 'margin-top: 10px; padding: 8px 12px; background: rgba(100, 255, 218, 0.06); border-left: 2px solid var(--highlight); border-radius: 4px; font-size: 0.75rem; color: var(--highlight); font-family: var(--font-mono); line-height: 1.5;';
+      aiBlock.textContent = tool.aiHighlight;
+      expandContent.appendChild(aiBlock);
+    }
+
+    content.appendChild(expandContent);
+
+    // Read More button
+    const readMoreBtn = document.createElement('button');
+    readMoreBtn.className = 'project-card__read-more';
+    readMoreBtn.textContent = 'Read More';
+    readMoreBtn.style.cssText = 'margin-top: 10px; padding: 6px 14px; font-size: 0.8rem; font-family: var(--font-mono); background: rgba(0, 191, 255, 0.1); color: var(--accent); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 8px; cursor: pointer; transition: background 0.3s ease, box-shadow 0.3s ease;';
+    readMoreBtn.addEventListener('click', () => {
+      const isVisible = expandContent.style.display === 'block';
+      expandContent.style.display = isVisible ? 'none' : 'block';
+      readMoreBtn.textContent = isVisible ? 'Read More' : 'Close';
     });
-    content.appendChild(featuresList);
-  }
-
-  // AI highlight (if available)
-  if (tool.aiHighlight) {
-    const aiBlock = document.createElement('div');
-    aiBlock.style.cssText = 'margin-top: 10px; padding: 8px 12px; background: rgba(100, 255, 218, 0.06); border-left: 2px solid var(--highlight); border-radius: 4px; font-size: 0.75rem; color: var(--highlight); font-family: var(--font-mono); line-height: 1.5;';
-    aiBlock.textContent = tool.aiHighlight;
-    content.appendChild(aiBlock);
+    content.appendChild(readMoreBtn);
   }
 
   // Tech stack tags
